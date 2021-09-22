@@ -1,8 +1,6 @@
 {
   "name": "animais-fantasticos",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "dependencies": {
     "jquery": "^3.6.0",
     "lodash": "^4.17.21"
@@ -27,7 +25,6 @@
     "type": "git",
     "url": "git+https://github.com/evandromottaz/animais-fantasticos.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/evandromottaz/animais-fantasticos/issues"
