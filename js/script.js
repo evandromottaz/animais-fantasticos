@@ -19,3 +19,4 @@ initDropdownMenu();
 initMenuMobile();
 initAnimaNumeros();
 initFuncionamento();
+
