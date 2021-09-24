@@ -8,6 +8,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initAnimaNumeros from "./modules/anima-numeros.js";
 import initFuncionamento from './modules/funcionamento.js'
 import initAnimaScroll from "./modules/anima-scroll.js";
+import initFetchAnimais from "./modules/fetch-animais.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]')
 scrollSuave.init();
@@ -26,7 +27,6 @@ tooltip.init();
 
 initDropdownMenu();
 initMenuMobile();
-initAnimaNumeros();
 initFuncionamento();
 initAnimaScroll();
-
+initFetchAnimais();
