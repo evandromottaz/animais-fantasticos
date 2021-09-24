@@ -1,28 +1,32 @@
-export default function initTabNav() {
-    const tabMenu = document.querySelectorAll('[data-tab="menu"] li');
-    const tabContent = document.querySelectorAll('[data-tab="content"] section');
+export default class TabNav {
+  constructor(menu, content) {
+    this.tabMenu = document.querySelectorAll(menu);
+    this.tabContent = document.querySelectorAll(content);
+    this.activeClass = 'ativo';
+  }
+
+  //  link da posição da imagem com o conteúdo
+  activeTab(index) {
+    this.tabContent.forEach(description => {
+        description.classList.remove(this.activeClass)
+    })
     
-    tabContent[0].classList.add('ativo')
-    
-    //  link da posição da imagem com o conteúdo
-    function activeTab(index) {
-        tabContent.forEach(description => {
-            description.classList.remove('ativo')
-        })
-        
-        const direcao = tabContent[index].dataset.anime
-        tabContent[index].classList.add('ativo', direcao)
+    const direcao = this.tabContent[index].dataset.anime
+    this.tabContent[index].classList.add(this.activeClass, direcao)
+  }
+
+  // Adiciona os eventos nas tabs
+  addTabNavEvent() {
+    this.tabMenu.forEach((itemMenu, index) => {
+      itemMenu.addEventListener('click', () => this.activeTab(index));
+    })
+  }
+
+  init() {
+    if(this.tabMenu.length && this.tabContent.length) {
+      // Ativar primeiro item
+      this.activeTab(0);
+      this.addTabNavEvent();
     }
-    
-    //  se tiver a const tabMenu e tabContent
-    if(tabMenu.length && tabContent.length) {
-        //  faça o loop pelas imagens - o item[img] e também a posição dele[index]
-        tabMenu.forEach((img, index) => {
-            img.addEventListener('click', () => {
-        
-                //  acionar a função e enviar a posição do item[index]
-                activeTab(index)
-            })
-        })
-    } 
+  }
 }
