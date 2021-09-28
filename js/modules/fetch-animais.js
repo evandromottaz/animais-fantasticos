@@ -1,4 +1,4 @@
-import AnimaNumeros from './anima-numeros.js';
+import AnimaNumeros from './anima-numeros.js'
 
 export default function fetchAnimais(url, target) {
   // Cria a div contendo informações
@@ -14,12 +14,12 @@ export default function fetchAnimais(url, target) {
   const numerosGrid = document.querySelector(target);
   function preencherAnimais(animal) {
     const divAnimal = createAnimal(animal);
-    numerosGrid.appendChild(divAnimal);
+    numerosGrid.appenChild(divAnimal);
   }
 
   // Anima os números de cada animal
   function animaAnimaisNumeros() {
-    const animaNumeros = new AnimaNumeros('[data-numero]', '.numeros', 'ativo');
+    const animaNumeros = new AnimaNumeros('[data-numero]','.numeros','ativo');
     animaNumeros.init();
   }
 
