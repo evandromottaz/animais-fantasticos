@@ -14,7 +14,7 @@ export default function fetchAnimais(url, target) {
   const numerosGrid = document.querySelector(target);
   function preencherAnimais(animal) {
     const divAnimal = createAnimal(animal);
-    numerosGrid.appenChild(divAnimal);
+    numerosGrid.appendChild(divAnimal);
   }
 
   // Anima os números de cada animal
