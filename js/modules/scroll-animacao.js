@@ -28,7 +28,7 @@ export default class ScrollAnima {
       if (window.pageYOffset > item.offset) {
         item.element.classList.add(this.activeClass)
       } else if (item.element.classList.contains(this.activeClass)){
-        item.element.classmList.remove(this.activeClass);
+        item.element.classList.remove(this.activeClass);
       }
     });
   }
