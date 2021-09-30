@@ -4,6 +4,7 @@ export default class ScrollAnima {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
     this.windowMetade = window.innerHeight * 0.6;
+    this.activeClass = 'ativo'
 
     this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
@@ -25,9 +26,9 @@ export default class ScrollAnima {
   checkDistance() {
     this.distance.forEach((item) => {
       if (window.pageYOffset > item.offset) {
-        item.element.classList.add('ativo')
-      } else if (item.element.classList.contains('ativo')){
-        item.element.classmList.remove('ativo');
+        item.element.classList.add(this.activeClass)
+      } else if (item.element.classList.contains(this.activeClass)){
+        item.element.classmList.remove(this.activeClass);
       }
     });
   }
